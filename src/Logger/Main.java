@@ -32,8 +32,17 @@ public class Main {
         System.out.println(defaultLogger1.error("msg3"));
         System.out.println(defaultLogger2.warning("msg4"));
 
-        System.out.println(logManager.getLogger("Вход пользователя"));
-        System.out.println(logManager.getLogger("Вход пользователя2222"));
+        //обработку ошибки можно сделать одим методом
+        AbstractLogger findLogger1 = logManager.getLogger("Вход пользователя");
+        AbstractLogger findLogger2 = logManager.getLogger("Вход пользователя22222");
+        if (!findLogger1.getName().equals("")){
+            System.out.println(findLogger1);
+        }
+        else System.out.println("Логгер не найден");
+        if (!findLogger2.getName().equals(""))
+            System.out.println(findLogger2);
+        else System.out.println("Логгер не найден");
+
 
 
     }

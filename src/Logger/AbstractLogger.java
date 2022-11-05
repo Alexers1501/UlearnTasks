@@ -12,10 +12,24 @@ public abstract class AbstractLogger {
         this.name = name;
     }
 
-    abstract String debug (String message);
-    abstract String info (String message);
-    abstract String warning (String message);
-    abstract String error (String message);
+    String debug(String message) {
+        return String.format("[DEBUG] %s %s - %s", calendar, this.getName(), message);
+    }
+
+    String info(String message) {
+        return String.format("[INFO] %s %s - %s", calendar, this.getName(), message);
+
+    }
+
+    String warning(String message) {
+        return String.format("[WARNING] %s %s - %s", calendar, this.getName(), message);
+
+    }
+
+    String error(String message) {
+        return String.format("[ERROR] %s %s - %s", calendar, this.getName(), message);
+
+    }
 
     public String getName() {
         return name;
